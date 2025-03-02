@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.sale {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 40px;
+    font-family: 'Montserrat';
+  }
+
+  .title{
+    font-size: 64px;
+    color: #424436;
+  }
+  
+  .sale__header{
+    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  }
+  
+  .sale__items {
+    display: grid;
+    grid-template-columns: repeat(4, 316px);
+    gap: 25px;
+  }
+  
+  .line {
+    width: 1100px;
+height: 1px;
+border-bottom: 1px solid #DDDDDD;
+margin-right: -150px;
+margin-top: 15px;
+  }
+  
+  
+  .all_sales_btn {
+    cursor: pointer;
+  width: 142px;
+  height: 36px;
+  background-color: #FFFFF1;
+  color: #8B8B8B;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  text-align: center;
+  padding: 8px 16px;
+  margin-top: 15px;
+  margin-right: -20px;
+  
+  }
+  
+  .all_sales_btn:hover {
+    color: #3a3a3a;
+  }
+
+  @media screen and (max-width: 1000px){
+    .all_sales_btn {
+    margin-right: -15px; 
+    }
+
+    .line {
+      width: 700px;
+  height: 1px;
+  border-bottom: 1px solid #DDDDDD;
+  margin-right: -150px;
+  margin-top: 15px;
+    }
+
+    .sale__items {
+      display: grid;
+      grid-template-columns: repeat(4, 225px);
+      gap: 13px;
+    }
+    
+  }
+
+  @media screen and (max-width: 768px){
+  
+    .line {
+      width: 450px;
+    }
+
+    .sale__items {
+      display: grid;
+      grid-template-columns: repeat(2, 347px);
+      gap: 15px;
+    }
+
+    .title{
+      font-size: 56px;
+    }
+    
+  }
+
+  @media screen and (max-width: 480px){
+  
+    .line {
+      width: 250px;
+    }
+
+    .sale__items {
+      display: grid;
+      grid-template-columns: repeat(2, 210px);
+    }
+
+    .title{
+      font-size: 48px;
+    }
+    
+  }
+
+  @media screen and (max-width: 360px){
+  
+    .line {
+      display: none;
+    }
+
+    .sale__items {
+      display: flex;
+      flex-direction: column;
+      width: 320px;
+      margin-bottom: 40px;
+    }
+
+    .title{
+      font-size: 48px;
+    }
+
+    .all_sales_btn {
+      position: absolute;
+      margin-top: 1710px;
+      margin-left: -220px;
+    }
+    
+  }

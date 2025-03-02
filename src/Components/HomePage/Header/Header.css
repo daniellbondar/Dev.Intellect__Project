@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+.header {
+    display: flex;
+    font-family: 'Montserrat';
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFF1;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 128px;
+    width: 100%;
+    list-style: none;
+    border-bottom: 1px solid #DDDDDD;
+  }
+
+
+.navigation {
+    
+display: flex;
+gap: 32px;
+justify-content: center;
+list-style: none;
+padding-top: 52px;
+padding-bottom: 50px;
+text-decoration: none;
+margin-left: -300px;
+}
+
+.navigation .link {
+    text-decoration: none;
+    color: #424436;
+
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 5px;
+    
+}
+
+.basket-products-count {
+    
+        position:absolute;
+      
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; /* Делаем элемент круглым */
+        font-size: 12px;
+        font-weight: 600;
+        color: white;
+        background-color: #92a134;
+      
+}
+
+.basket-icon {
+    text-decoration: none;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+    
+}
+
+.menu-icon {
+    display: none;
+    
+}
+
+
+
+.bm-menu {
+    background-color: #FFFFF1;
+    margin-top: -35px;
+    right: 0;
+    position: fixed;
+    
+    border: 1px solid gainsboro;
+}
+
+.bm-item {
+    cursor: pointer;
+    color: #424436;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-family: 'Montserrat';
+    border-bottom: 1px solid #FFFFF1;
+}
+
+.bm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .navigation {
+        margin-left: -150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navigation {
+        margin-left: -20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .header {
+        /* border: none; */
+        height: 68px;
+    }
+
+     .menu-icon {
+        display: block;
+     }
+
+     .navigation {
+        display: none;
+    }
+
+     .menu-icon {
+        padding-left: 300px;
+     }
+
+     .basket-icon {
+        position: absolute;
+        padding-left: 300px;
+     }
+
+   
+}
+
+@media screen and (max-width: 360px) {
+    .header {
+        /* border: none; */
+        height: 68px;
+    }
+
+     .menu-icon {
+        display: block;
+     }
+
+     .navigation {
+        display: none;
+    }
+
+     .menu-icon {
+        padding-left: 200px;
+     }
+
+     .basket-icon {
+        position: absolute;
+        padding-left: 200px;
+     }
+
+     .bm-item {
+        
+        font-size: 20px;
+        font-weight: 500;
+        
+    }
+}
+
+

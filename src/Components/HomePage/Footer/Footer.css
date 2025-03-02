@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.footer {
+    font-family: 'Montserrat';
+    width: 100%;
+    
+}
+
+.contact {
+    padding-left: 20px;
+    
+    font-size: 64px;
+    color: #424436;
+}
+
+
+
+.container {
+    
+    display: grid;
+    grid-template-columns: 780px 530px;
+    grid-template-rows: 150px 194px;
+    gap: 32px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.info {
+    background-color: #F2F6D3;
+    padding: 32px;
+    color: #8B8B8B;
+    size: 20px;
+    border-radius: 14px;
+    
+}
+
+
+
+.p-footer{
+    font-size: 20px;
+}
+
+.h-footer {
+    color: #424436;
+    font-size: 40px;
+    margin-top: 16px;
+}
+
+.socials {
+    margin-top: 16px;
+    
+}
+.socials:not(:last-child) {
+    margin-right: 16px;
+}
+
+iframe {
+    width: 1340px;
+    height: 350px;
+    margin-left: 20px;
+    margin-top: 32px;
+    border-radius: 14px;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        margin-top: 20px;
+        margin-left: 20px;
+        
+        gap: 20px;
+        grid-template-columns: 465px 465px;
+        grid-template-rows: 150px 238px;
+        
+    }
+
+    .contact {
+        padding-left: 20px;
+    }
+
+    iframe {
+        width: 950px;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 470px 220px;
+        grid-template-rows: 150px 238px;
+        
+    }
+
+    .contact {
+        font-size: 56px;
+    }
+
+    iframe {
+        width: 710px;
+        margin-left: 20px;
+        margin-top: 20px;
+        
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 440px;
+    }
+
+    .contact {
+        font-size: 56px;
+    }
+
+    iframe {
+        width: 440px;
+        margin-left: 20px;
+        margin-top: 20px;
+        
+    }
+
+    .h-footer {
+       font-size: 28px;
+        
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+    }
+
+    .contact {
+        font-size: 40px;
+    }
+
+    iframe {
+        width: 320px;
+        margin-left: 20px;
+        margin-top: 20px;
+        
+    }
+
+    .h-footer {
+       font-size: 25px;
+        
+    }
+}
+    
+

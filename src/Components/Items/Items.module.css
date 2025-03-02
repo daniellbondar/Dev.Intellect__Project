@@ -1,0 +1,173 @@
+.item {
+    position: relative;
+    background-color: #fff; 
+    border-radius: 9px; 
+    font-size: 20px;
+    line-height: 26px;
+    border: 1px solid #DDDDDD; 
+    padding-bottom: 32px;
+    
+}
+
+.discount {
+    position: absolute;
+    width: 68px;
+    height: 34px;
+    background-color: #f26d22;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px; 
+    margin-top: 10px;
+    margin-left: 240px;
+}
+
+.item__img_container {
+
+}
+
+.item__img {
+    
+    width: 100%;
+  height: 284px;
+  object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+}
+
+.item__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 16px; 
+    padding-top: 0.5px;
+    margin-left: 32px;
+}
+
+.item__title {
+    font-weight: 500;
+    line-height: 26px;
+    white-space: nowrap;     
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        max-width: 260px; 
+        margin-top: 10px;           
+}
+
+.new__price {
+    
+    color: #424436;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+.old__price {
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #8b8b8b;
+    text-decoration: line-through;
+   }
+
+   @media screen and (max-width: 1000px) {
+    .item {
+        height: 398px;
+    }
+
+    .item__img {
+        height: 250px;
+    }
+
+    .item__title {
+        white-space: wrap;      
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        max-width: 180px;         
+    }
+
+    .discount {
+        margin-left: 145px;
+    }
+   }
+
+   @media screen and (max-width: 768px) {
+    .item__title {
+        max-width: 300px;         
+    }
+
+    .discount {
+        margin-left: 265px;
+    }
+   }
+
+   @media screen and (max-width: 480px) {
+    .item__title {
+        max-width: 180px;         
+    }
+
+
+    .discount {
+        margin-left: 135px;
+        width: 63px;
+        height: 31px;
+    }
+
+    .item__body {
+        margin-left: 20px;
+    }
+
+    .new__price {
+        font-size: 36px;
+        
+      }
+    
+    .old__price {
+        font-size: 18px;
+       }
+   }
+
+   @media screen and (max-width: 360px) {
+    .item__title {
+        max-width: 300px;         
+    }
+
+
+    .discount {
+        margin-left: 130px;
+    }
+
+    .item__body {
+        margin-left: 20px;
+    }
+
+    .new__price {
+        font-size: 40px;
+        
+      }
+    
+    .old__price {
+        font-size: 20px;
+       }
+
+    .discount {
+        margin-left: 245px;
+        width: 63px;
+        height: 31px;
+    }
+   }
+  
