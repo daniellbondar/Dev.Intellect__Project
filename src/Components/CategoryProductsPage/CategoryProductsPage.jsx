@@ -23,6 +23,8 @@ export const CategoryProductsPage = observer(() => {
 
   const { id } = useParams();  
 
+  
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -69,7 +71,7 @@ export const CategoryProductsPage = observer(() => {
         <div className={style.nav_buttons_category_products}>
           <Link to='/'><button className={style.mainPage_nav}>Main page</button></Link>
           <Link to='/category'><button className={style.categories_nav_category_products}>Categories</button></Link>
-          <button className={style.category_products_nav}>{selectedCategory.category?.title}</button>
+          {/* <button className={style.category_products_nav}>s</button> */}
         </div>
         <h1 className={style.category_products_title}>
           {selectedCategory.category?.title}

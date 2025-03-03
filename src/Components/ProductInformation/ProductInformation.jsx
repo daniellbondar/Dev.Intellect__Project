@@ -9,11 +9,11 @@ import AddToBasket from '../Buttons/AddToBasket';
 import basket from '../../store/Basket';
 import { observer } from 'mobx-react-lite';
 
-export const ProductInformation = observer(() => {
+export const ProductInformation = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [counter, setCounter] = useState(1);
+  const [count, setCount] = useState(1);
   const { id } = useParams();
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -27,26 +27,17 @@ export const ProductInformation = observer(() => {
 
 
     const fetchProducts = async () => {
-      const prodInLocalStorage = selectedproduct.getItem();
+      const prodInLocalStore = selectedproduct.getItem();
 
-      if (!prodInLocalStorage) {
-        setError('Продукт не знайдено в локальному сховищі');
-        setLoading(false);
-        return;
-      }
+      
+      
 
       try {
         console.log('selectedproduct', selectedproduct);
         const response = await axios.get(
-          `http://localhost:3333/products/${id}`
+          `http://localhost:3333/products/${prodInLocalStore.id}`
         );
         console.log('отримані дані', response.data);
-
-        if (response.data && typeof response.data === 'object') {
-          setProduct(response.data);
-        } else {
-          setError('Продукт не знайдено');
-        }
 
         if (Array.isArray(response.data) && response.data.length > 0) {
           setProduct(response.data[0]);
@@ -88,6 +79,10 @@ if (loading) return <h1>Loading...</h1>;
 if (error) return <h1>{error}</h1>;
 if (!product || Object.keys(product).length === 0) return <h1>Продукт не знайдено</h1>;
 
+const handleIncrease = () => setCount(count + 1);
+const handleDecrease = () => {
+  if (count > 1) setCount(count - 1);
+};
 
 const toggleText = () => setIsExpanded(!isExpanded);
   return (
@@ -100,7 +95,7 @@ const toggleText = () => setIsExpanded(!isExpanded);
       <div className='product-information-nav-buttons'>
           <Link to='/'><button className='mainPage-nav'>Main page</button></Link>
           <Link to='/category'><button className='categories-nav-product-information'>Categories</button></Link>
-          <button className='category-title-button' onClick={handleBack}>{selectedCategory.category?.title}</button>
+          {/* <button className='category-title-button' onClick={handleBack}>{selectedCategory.category?.title}</button> */}
           <button className='product-title-button'>{product.title}</button>
       </div>
           
@@ -159,18 +154,20 @@ const toggleText = () => setIsExpanded(!isExpanded);
 
 <div className='counter'>
   <button className='counter-minus-button' onClick={() =>{
-              counter === 1 ? setCounter(counter):
-          setCounter(counter - 1)}}>
+              count === 1 ? setCount(count):
+              setCount(count - 1)
+
+            } }>
     -
   </button>
 
-  <span className="count-number">{counter}</span>
+  <span className="count-number">{count}</span>
 
-  <button className='counter-button' onClick={() => setCounter(counter + 1)}>
+  <button className='counter-button' onClick={() => setCount(count + 1)}>
     +
   </button>
 
-  <AddToBasket value ={product} counter={counter}/>
+<AddToBasket value ={product} counter={count}/>
 
   {/* <button onClick={handleAddToBasket}>Add to cart</button> */}
 </div>
@@ -204,4 +201,4 @@ const toggleText = () => setIsExpanded(!isExpanded);
       
     </>
   );
-});
+};

@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 class Basket {
   items = [];
@@ -38,7 +38,7 @@ class Basket {
     localStorage.setItem('Basket', JSON.stringify(this.items));
   }
 
-  clearBasket() {
+  clearItems() {
     this.items = [];
     localStorage.setItem('Basket', JSON.stringify([]));
   }

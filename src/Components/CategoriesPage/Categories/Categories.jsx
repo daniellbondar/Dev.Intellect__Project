@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { CategoryProductsPage } from "../../CategoryProductsPage/CategoryProductsPage";
 
 import "./Categories.css";
 import selectedCategory from "../../../store/SelectedCategory";
@@ -13,13 +13,17 @@ import { Link, useParams } from "react-router-dom";
 
 const Categories = () => {
   
+  
 
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
 
-  
+  const [selectedCategory, setItems] = useState(() => {
+    const savedItems = localStorage.getItem('SelectedCategory');
+    return savedItems ? JSON.parse(savedItems) : [];
+  });
 
 
   useEffect(() => {
@@ -40,18 +44,17 @@ const Categories = () => {
     fetchCategories();
   }, []);
 
-  useEffect(() => {
-      selectedCategory.fetchCategories(id).then(() => {
-        console.log('Updated selectedCategory:', selectedCategory);
-      });
-    }, [id]);
-
+ 
  
 
   if (loading) return <p> Загрузка...</p>;
   if (error) return <p>{error}</p>;
   console.log('categories before return',categories)
+
+  
   return (
+
+   
     <div className="all-categories-block">
         
         <div className='nav-buttons'>
